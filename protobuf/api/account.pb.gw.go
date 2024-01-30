@@ -35,6 +35,10 @@ func request_AccountService_Register_0(ctx context.Context, marshaler runtime.Ma
 	var protoReq RegisterRequest
 	var metadata runtime.ServerMetadata
 
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
 	msg, err := client.Register(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
@@ -43,6 +47,10 @@ func request_AccountService_Register_0(ctx context.Context, marshaler runtime.Ma
 func local_request_AccountService_Register_0(ctx context.Context, marshaler runtime.Marshaler, server AccountServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq RegisterRequest
 	var metadata runtime.ServerMetadata
+
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
 
 	msg, err := server.Register(ctx, &protoReq)
 	return msg, metadata, err
@@ -53,6 +61,10 @@ func request_AccountService_Refresh_0(ctx context.Context, marshaler runtime.Mar
 	var protoReq RefreshRequest
 	var metadata runtime.ServerMetadata
 
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
 	msg, err := client.Refresh(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
@@ -61,6 +73,10 @@ func request_AccountService_Refresh_0(ctx context.Context, marshaler runtime.Mar
 func local_request_AccountService_Refresh_0(ctx context.Context, marshaler runtime.Marshaler, server AccountServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq RefreshRequest
 	var metadata runtime.ServerMetadata
+
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
 
 	msg, err := server.Refresh(ctx, &protoReq)
 	return msg, metadata, err
@@ -71,6 +87,10 @@ func request_AccountService_Forget_0(ctx context.Context, marshaler runtime.Mars
 	var protoReq ForgetRequest
 	var metadata runtime.ServerMetadata
 
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
 	msg, err := client.Forget(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
@@ -79,6 +99,10 @@ func request_AccountService_Forget_0(ctx context.Context, marshaler runtime.Mars
 func local_request_AccountService_Forget_0(ctx context.Context, marshaler runtime.Marshaler, server AccountServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq ForgetRequest
 	var metadata runtime.ServerMetadata
+
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
 
 	msg, err := server.Forget(ctx, &protoReq)
 	return msg, metadata, err

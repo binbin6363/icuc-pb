@@ -10,12 +10,14 @@ service AuthService {
   rpc Login(LoginRequest) returns (LoginResponse) {
     option (google.api.http) = {
       post: "/im/login"
+      body: "*"
     };
   }
   // 登出
   rpc Logout(LogoutRequest) returns (LogoutResponse) {
     option (google.api.http) = {
       post: "/im/logout"
+      body: "*"
     };
   }
 

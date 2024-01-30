@@ -10,18 +10,21 @@ service AccountService {
   rpc Register(RegisterRequest) returns (RegisterResponse) {
     option (google.api.http) = {
       post: "/register"
+      body: "*"
     };
   }
   // 刷新token
   rpc Refresh(RefreshRequest) returns (RefreshResponse) {
     option (google.api.http) = {
       post: "/refresh"
+      body: "*"
     };
   }
   // 忘记密码
   rpc Forget(ForgetRequest) returns (ForgetResponse) {
     option (google.api.http) = {
       post: "/forget"
+      body: "*"
     };
   }
 }

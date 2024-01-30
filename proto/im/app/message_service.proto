@@ -10,24 +10,28 @@ service MessageService {
   rpc SingleMessage(SingleMessageRequest) returns (SingleMessageResponse) {
     option (google.api.http) = {
       post: "/im/message/single"
+      body: "*"
     };
   }
   // 群消息
   rpc GroupMessage(GroupMessageRequest) returns (GroupMessageResponse) {
     option (google.api.http) = {
       post: "/im/message/group"
+      body: "*"
     };
   }
   // 图片消息
   rpc ImageMessage(ImageMessageRequest) returns (ImageMessageResponse) {
     option (google.api.http) = {
       post: "/im/message/image"
+      body: "*"
     };
   }
   // 文件消息
   rpc FileMessage(FileMessageRequest) returns (FileMessageResponse) {
     option (google.api.http) = {
       post: "/im/message/file"
+      body: "*"
     };
   }
 }

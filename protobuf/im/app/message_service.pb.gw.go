@@ -35,6 +35,10 @@ func request_MessageService_SingleMessage_0(ctx context.Context, marshaler runti
 	var protoReq SingleMessageRequest
 	var metadata runtime.ServerMetadata
 
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
 	msg, err := client.SingleMessage(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
@@ -43,6 +47,10 @@ func request_MessageService_SingleMessage_0(ctx context.Context, marshaler runti
 func local_request_MessageService_SingleMessage_0(ctx context.Context, marshaler runtime.Marshaler, server MessageServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq SingleMessageRequest
 	var metadata runtime.ServerMetadata
+
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
 
 	msg, err := server.SingleMessage(ctx, &protoReq)
 	return msg, metadata, err
@@ -53,6 +61,10 @@ func request_MessageService_GroupMessage_0(ctx context.Context, marshaler runtim
 	var protoReq GroupMessageRequest
 	var metadata runtime.ServerMetadata
 
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
 	msg, err := client.GroupMessage(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
@@ -61,6 +73,10 @@ func request_MessageService_GroupMessage_0(ctx context.Context, marshaler runtim
 func local_request_MessageService_GroupMessage_0(ctx context.Context, marshaler runtime.Marshaler, server MessageServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GroupMessageRequest
 	var metadata runtime.ServerMetadata
+
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
 
 	msg, err := server.GroupMessage(ctx, &protoReq)
 	return msg, metadata, err
@@ -71,6 +87,10 @@ func request_MessageService_ImageMessage_0(ctx context.Context, marshaler runtim
 	var protoReq ImageMessageRequest
 	var metadata runtime.ServerMetadata
 
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
 	msg, err := client.ImageMessage(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
@@ -79,6 +99,10 @@ func request_MessageService_ImageMessage_0(ctx context.Context, marshaler runtim
 func local_request_MessageService_ImageMessage_0(ctx context.Context, marshaler runtime.Marshaler, server MessageServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq ImageMessageRequest
 	var metadata runtime.ServerMetadata
+
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
 
 	msg, err := server.ImageMessage(ctx, &protoReq)
 	return msg, metadata, err
@@ -89,6 +113,10 @@ func request_MessageService_FileMessage_0(ctx context.Context, marshaler runtime
 	var protoReq FileMessageRequest
 	var metadata runtime.ServerMetadata
 
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
 	msg, err := client.FileMessage(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
@@ -97,6 +125,10 @@ func request_MessageService_FileMessage_0(ctx context.Context, marshaler runtime
 func local_request_MessageService_FileMessage_0(ctx context.Context, marshaler runtime.Marshaler, server MessageServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq FileMessageRequest
 	var metadata runtime.ServerMetadata
+
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
 
 	msg, err := server.FileMessage(ctx, &protoReq)
 	return msg, metadata, err
